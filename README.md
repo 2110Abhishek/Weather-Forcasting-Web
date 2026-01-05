@@ -6,12 +6,11 @@ The app fetches real-time weather data from a public API and provides current co
 🚀 Live Demo
 
 🔗 Deployed Link (Vercel):
-https://your-vercel-deployment-link.vercel.app
+https://weather-forcasting-web.vercel.app/
 
 📸 Screenshots
 Light Mode	Dark Mode
 
-	
 
 🛠️ Tech Stack
 
@@ -117,7 +116,7 @@ NEXT_PUBLIC_WEATHER_API_KEY=YOUR_OPENWEATHERMAP_API_KEY
 
 🧑‍💻 Setup Instructions (Local Development)
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/weather-app.git
+git clone https://github.com/2110Abhishek/Weather-Forcasting-Web.git
 cd weather-app
 
 2️⃣ Install Dependencies
