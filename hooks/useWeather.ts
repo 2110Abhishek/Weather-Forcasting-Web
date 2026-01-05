@@ -16,50 +16,53 @@ export const useWeather = (city: string, unit: "metric" | "imperial") => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const loadWeatherData = useCallback(
-    async (cityName: string) => {
-      if (!cityName.trim()) return;
+const loadWeatherData = useCallback(
+  async (cityName: string) => {
+    if (!cityName.trim()) return;
 
-      try {
-        setLoading(true);
-        setError(null);
+    try {
+      setLoading(true);
+      setError(null);
 
-        const [weatherData, forecastData] = await Promise.all<
-          [WeatherResponse, ForecastResponse]
-        >([
-          fetchWeatherByCity(cityName, unit),
-          fetchForecast(cityName, unit),
-        ]);
+      const weatherData: WeatherResponse = await fetchWeatherByCity(
+        cityName,
+        unit
+      );
 
-        setWeather(weatherData);
+      const forecastData: ForecastResponse = await fetchForecast(
+        cityName,
+        unit
+      );
 
-        const dailyForecast = forecastData.list
-          .reduce<ForecastItem[]>((acc, item: ForecastItem) => {
-            const date = new Date(item.dt * 1000).toLocaleDateString();
+      setWeather(weatherData);
 
-            if (
-              !acc.find(
-                (f) =>
-                  new Date(f.dt * 1000).toLocaleDateString() === date
-              )
-            ) {
-              acc.push(item);
-            }
-            return acc;
-          }, [])
-          .slice(1, 6); // Next 5 days
+      const dailyForecast = forecastData.list
+        .reduce<ForecastItem[]>((acc, item: ForecastItem) => {
+          const date = new Date(item.dt * 1000).toLocaleDateString();
 
-        setForecast(dailyForecast);
-      } catch (err) {
-        setError((err as Error).message);
-        setWeather(null);
-        setForecast([]);
-      } finally {
-        setLoading(false);
-      }
-    },
-    [unit]
-  );
+          if (
+            !acc.find(
+              (f) =>
+                new Date(f.dt * 1000).toLocaleDateString() === date
+            )
+          ) {
+            acc.push(item);
+          }
+          return acc;
+        }, [])
+        .slice(1, 6);
+
+      setForecast(dailyForecast);
+    } catch (err) {
+      setError((err as Error).message);
+      setWeather(null);
+      setForecast([]);
+    } finally {
+      setLoading(false);
+    }
+  },
+  [unit]
+);
 
   const loadWeatherByLocation = useCallback(async () => {
     if (!navigator.geolocation) {
