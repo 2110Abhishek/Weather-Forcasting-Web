@@ -1,36 +1,216 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🌦️ Weather Forecasting Web Application
 
-## Getting Started
+A modern, responsive Weather Forecasting web application built using Next.js, React, TypeScript, and Tailwind CSS.
+The app fetches real-time weather data from a public API and provides current conditions, a 5-day forecast, dark mode, unit toggle, and more.
 
-First, run the development server:
+🚀 Live Demo
 
-```bash
+🔗 Deployed Link (Vercel):
+https://your-vercel-deployment-link.vercel.app
+
+📸 Screenshots
+Light Mode	Dark Mode
+
+	
+
+🛠️ Tech Stack
+
+Frontend
+
+HTML5
+
+CSS3
+
+Tailwind CSS
+
+React.js
+
+Next.js (App Router)
+
+TypeScript
+
+Other Tools
+
+OpenWeatherMap API
+
+Vercel (Deployment)
+
+✨ Features
+✅ Mandatory Features
+
+City-based weather search
+
+Current weather details:
+
+City name
+
+Temperature (°C / °F)
+
+Weather condition
+
+Humidity
+
+Wind speed
+
+5-day weather forecast
+
+Dark mode toggle
+
+Unit toggle (Celsius / Fahrenheit)
+
+Skeleton loading UI
+
+Error handling (invalid city, network issues)
+
+Responsive UI (mobile, tablet, desktop)
+
+🌟 Additional Enhancements
+
+Clean and reusable component structure
+
+Centralized API handling
+
+Strict TypeScript type safety
+
+Subtle hover effects and transitions
+
+📁 Project Structure
+weather-app/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── globals.css
+│   └── providers.tsx
+│
+├── components/
+│   ├── SearchBar.tsx
+│   ├── WeatherCard.tsx
+│   ├── ForecastCard.tsx
+│   ├── Skeleton.tsx
+│   └── ThemeToggle.tsx
+│
+├── hooks/
+│   └── useWeather.ts
+│
+├── lib/
+│   └── api.ts
+│
+├── types/
+│   └── weather.ts
+│
+├── public/
+│   └── screenshots/
+│
+├── .env.local
+├── tailwind.config.ts
+├── tsconfig.json
+└── README.md
+
+🔑 Environment Variables
+
+Create a .env.local file in the root directory and add:
+
+NEXT_PUBLIC_WEATHER_API_KEY=YOUR_OPENWEATHERMAP_API_KEY
+
+
+⚠️ Do not commit .env.local to GitHub.
+
+🧑‍💻 Setup Instructions (Local Development)
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/weather-app.git
+cd weather-app
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Run the Application
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open:
+👉 http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🌐 Weather API Used
 
-## Learn More
+OpenWeatherMap API
 
-To learn more about Next.js, take a look at the following resources:
+Current Weather API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5-Day / 3-Hour Forecast API
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🔗 https://openweathermap.org/api
 
-## Deploy on Vercel
+🧪 Error Handling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Displays user-friendly error messages for:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Invalid city names
+
+API/network failures
+
+Loading state handled using skeleton UI
+
+No application crashes on bad input
+
+📈 Performance & Best Practices
+
+Functional components only
+
+React Hooks (useState, useEffect)
+
+Centralized API calls
+
+Reusable UI components
+
+Strict TypeScript (no any)
+
+Clean folder and file naming conventions
+
+📦 Deployment
+
+The application is deployed on Vercel.
+
+Steps:
+
+Push code to GitHub
+
+Import repository in Vercel
+
+Add environment variables in Vercel dashboard
+
+Deploy 🚀
+
+📄 Submission Checklist
+
+✔ GitHub repository link
+✔ Live deployed URL (Vercel)
+✔ README with setup instructions
+✔ Screenshots of UI
+✔ All mandatory features implemented
+
+👤 Author
+
+Abhishek Choudhari
+Full Stack Developer
+
+📝 Notes for Evaluators
+
+This project was built with a strong focus on:
+
+Code readability
+
+Type safety
+
+UI responsiveness
+
+Real-world frontend best practices
+
+If you want, next I can:
+
+🔥 tailor this README exactly to the company tone
+
+🔥 add evaluation-friendly wording
+
+🔥 review screenshots & UI polish
+
+🔥 help you fill the Google Form perfectly
